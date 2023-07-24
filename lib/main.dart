@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firestore_auth/firebase_options.dart';
+import 'package:firestore_auth/src/modules/authentication/screens/splash_screen/splash_screen.dart';
+import 'package:firestore_auth/src/utils/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,11 +17,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      themeMode: ThemeMode.system,
+      theme: TAppTheme.lightTheme,
+      darkTheme: TAppTheme.darkTheme,
+      home: SplashScreen(),
     );
   }
 }
